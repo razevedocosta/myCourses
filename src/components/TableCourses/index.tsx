@@ -1,8 +1,9 @@
-import axios from "axios";
-import { useState } from "react";
-import { useContext, useEffect } from "react";
+
+import React, { useState, useEffect,  useContext } from "react";
 import { CoursesContext } from '../../CoursesContext';
 import { Container } from "./styles";
+
+import axios from 'axios';
 
 interface CourseParams {
     id: number;
@@ -12,16 +13,18 @@ interface CourseParams {
 }
 
 export function TableCourses() {
-    // const { courses } = useContext(CoursesContext);
-    const [courses, setCourses] = useState<CourseParams[]>([]);
-
+    const { courses } = useContext(CoursesContext);
+    const [newCourses, setNewCourses] = useState<CourseParams[]>([]);
+    
     useEffect(() => {
         axios.get('http://localhost:3333/courses')
             .then((response) => {
-                setCourses(response.data);
+                setNewCourses(response.data);
+            })
+            .catch((error) =>{
+                console.log(' Erro gerado:' + error);
             });
-    }, []);
-
+    }, [courses]);
     return (
         <Container>
             <table>
@@ -34,8 +37,8 @@ export function TableCourses() {
                     </tr>
                 </thead>
                 <tbody>
-                    {courses.map(course => (
-                        <tr key={course?.id}>
+                    {newCourses.map(course => (
+                        <tr key={course.id}>
                             <td>{course?.id}</td>
                             <td>{course?.title}</td>
                             <td>{course?.category}</td>

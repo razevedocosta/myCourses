@@ -29,6 +29,18 @@
       "category": "Front-End",
       "date": "14/03/2021",
       "id": 5
+    },
+    {
+      "title": "CSS",
+      "category": "Front-End",
+      "date": "18/05/2021",
+      "id": 6
+    },
+    {
+      "title": "StyledComponents",
+      "category": "Front-End",
+      "date": "18/05/2021",
+      "id": 7
     }
   ]
 }
