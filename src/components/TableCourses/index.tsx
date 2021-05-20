@@ -2,25 +2,26 @@ import axios from "axios";
 import { useState } from "react";
 import { useContext, useEffect } from "react";
 import { CoursesContext } from '../../CoursesContext';
+
 import { Container } from "./styles";
 
 interface CourseParams {
     id: number;
     title: string;
-    category: string;
+    category_id: number;
     date: string;
 }
 
 export function TableCourses() {
-    // const { courses } = useContext(CoursesContext);
-    const [courses, setCourses] = useState<CourseParams[]>([]);
+    const { courses, categories } = useContext(CoursesContext);
+    const [newCourse, setNewCourse] = useState<CourseParams[]>([]);
 
     useEffect(() => {
         axios.get('http://localhost:3333/courses')
             .then((response) => {
-                setCourses(response.data);
+                setNewCourse(response.data);
             });
-    }, []);
+    }, [courses]);
 
     return (
         <Container>
@@ -34,12 +35,14 @@ export function TableCourses() {
                     </tr>
                 </thead>
                 <tbody>
-                    {courses.map(course => (
-                        <tr key={course?.id}>
-                            <td>{course?.id}</td>
-                            <td>{course?.title}</td>
-                            <td>{course?.category}</td>
-                            <td>{course?.date}</td>
+                    {newCourse.map(course => (
+                        <tr key={course.id}>
+                            <td>{course.id}</td>
+                            <td>{course.title}</td>
+                            <td>
+                                {categories.map(c => c.id == course.category_id ? c.name : '')}
+                            </td>
+                            <td>{course.date}</td>
                         </tr>
                     ))}
                 </tbody>

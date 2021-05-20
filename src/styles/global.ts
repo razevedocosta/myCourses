@@ -8,11 +8,13 @@ export const GlobalStyle = createGlobalStyle`
         --blue: #2087ED;
 
         --blue-light: #6933ff;
+        --green-light: #A1D3C3;
 
         --text-title: #363f5f;
         --text-body: #969cb3;
 
         --shape: #ffffff;
+        --gray-line: #C7D2DD;
     }
 
     * {

@@ -13,6 +13,10 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    > a {
+        text-decoration: none;
+    }
+
     h1 {
         font-size: 1.05rem;
         color: var(--shape);
@@ -26,20 +30,20 @@ export const Content = styled.div`
         }
     }
 
-    button {
-        font-size: 0.8rem;
-        color: #fff;
-        background: var(--blue-light);
-        border: 0;
-        padding: 0 1rem;
-        border-radius: 0.25rem;
-        height: 2rem;
-        margin-left: 0.5rem;
+    div {
+        a {
+            color: #fff;
+            background: var(--blue-light);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.25rem;
+            margin-left: 0.5rem;
+            text-decoration: none;
 
-        transition: filter 0.2s;
+            transition: filter 0.2s;
 
-        &:hover {
-            filter: brightness(0.9);
+            &:hover {
+                filter: brightness(0.9);
+            }
         }
     }
 `;

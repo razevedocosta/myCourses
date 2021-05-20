@@ -12,7 +12,7 @@ export const Container = styled.div`
 
         th {
             color: var(--text-title);
-            font-weight: 400;
+            font-weight: bold;
             padding: 1rem 2rem;
             text-align: left;
             line-height: 1rem;
@@ -24,6 +24,14 @@ export const Container = styled.div`
             background: var(--shape);
             color: var(--text-title);
             border-radius: 0.25rem;
+        }
+
+        tbody {
+            tr:hover {
+                /* transform: translate(5px); */
+                font-weight: bold;
+                cursor: pointer;
+            }
         }
     }
 `;
