@@ -38,7 +38,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 Obrigado pela contribuição e dúvidas resolvidas!
 
-<a href="https://rocketseat.com.br">
+<a href="https://github.com/WillianMedeiros14">
   <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/57229960?v=4" width="100px;" alt=""/>
   <br />
   <sub>
