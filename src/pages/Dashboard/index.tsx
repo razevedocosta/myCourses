@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 
 import { Header } from '../../components/Header';
+import { CourseChart } from '../../components/CourseChart';
 import { Button } from '../../components/Button';
 import { CourseCard } from '../../components/CourseCard';
 
@@ -9,12 +10,14 @@ import { CoursesContext } from "../../CoursesContext";
 
 const Dashboard: React.FC = () => {
     const {
-        categories, handleClickButton, selectedCategoryId, selectedCategory, courses
+        categories, handleClickButton, selectedCategoryId, courses
     } = useContext(CoursesContext);
 
     return (
         <>
             <Header />
+
+            <CourseChart />
 
             <Content>
                 <div>

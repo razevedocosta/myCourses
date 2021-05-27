@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useMemo } from "react";
 import { createContext, useEffect, useState, ReactNode } from "react";
 
 interface CourseCategoryProps {
@@ -10,7 +11,7 @@ interface CourseCategoryProps {
 interface Course {
     id: number;
     title: string;
-    category: string;
+    category: number;
     date: string;
 }
 
@@ -55,7 +56,7 @@ export function CoursesProvider({ children }: CoursesProviderProps) {
     }, []);
 
     useEffect(() => {
-        axios.get<Course[]>(`http://localhost:3333/courses/?category_id=${selectedCategoryId}`).then(response => {
+        axios.get<Course[]>(`http://localhost:3333/courses/?category=${selectedCategoryId}`).then(response => {
             setCourses(response.data);
             console.log(response.data);
         });

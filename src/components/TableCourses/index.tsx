@@ -8,7 +8,7 @@ import { Container } from "./styles";
 interface CourseParams {
     id: number;
     title: string;
-    category_id: number;
+    category: number;
     date: string;
 }
 
@@ -40,7 +40,7 @@ export function TableCourses() {
                             <td>{course.id}</td>
                             <td>{course.title}</td>
                             <td>
-                                {categories.map(c => c.id == course.category_id ? c.name : '')}
+                                {categories.map(c => c.id === course.category ? c.name : '')}
                             </td>
                             <td>{course.date}</td>
                         </tr>

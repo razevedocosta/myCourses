@@ -7,7 +7,7 @@ export function Form() {
     const { createCourse } = useContext(CoursesContext);
 
     const [title, setTitle] = useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState(0);
     const [date, setDate] = useState('');
     const [inputError, setInputError] = useState('');
 
@@ -24,7 +24,7 @@ export function Form() {
         });
 
         setTitle('');
-        setCategory('');
+        setCategory(0);
         setDate('');
     }
 
@@ -35,7 +35,7 @@ export function Form() {
                     onChange={event => setTitle(event.target.value)} />
 
                 <input placeholder="Categoria" value={category}
-                    onChange={event => setCategory(event.target.value)} />
+                    onChange={event => setCategory(Number(event.target.value))} />
 
                 <input placeholder="Data de Conclusão" value={date}
                     onChange={event => setDate(event.target.value)} />

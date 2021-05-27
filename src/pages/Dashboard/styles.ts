@@ -7,7 +7,7 @@ export const Content = styled.div`
     padding: 0 5rem;
 
     > div {
-        margin: 2rem 0;
+        margin: 1rem 0;
     }
 
     section {

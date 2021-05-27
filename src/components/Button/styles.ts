@@ -10,6 +10,7 @@ export const CategoryButton = styled.button`
     padding: 0.5rem;
     border-radius: 0.25rem;
     margin-right: 0.25rem;
+    margin-bottom: 0.5rem;
     cursor: pointer;
     border: none;
 
