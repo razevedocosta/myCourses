@@ -2,7 +2,9 @@ import axios from "axios";
 import { useState } from "react";
 import { useContext, useEffect } from "react";
 import { CoursesContext } from '../../CoursesContext';
+import { FiTrash } from 'react-icons/fi';
 
+import api from '../../services/api';
 import { Container } from "./styles";
 
 interface CourseParams {
@@ -13,15 +15,23 @@ interface CourseParams {
 }
 
 export function TableCourses() {
-    const { courses, categories } = useContext(CoursesContext);
-    const [newCourse, setNewCourse] = useState<CourseParams[]>([]);
+    const {courses, categories} = useContext(CoursesContext);
+    const [course, setCourse] = useState<CourseParams[]>([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3333/courses')
+        api.get('http://localhost:3333/courses')
             .then((response) => {
-                setNewCourse(response.data);
+                setCourse(response.data);
             });
     }, [courses]);
+
+    const handleDelete = async (id: number) => {
+        await api.delete(`/courses/${id}`);
+
+        const coursesFiltered = courses.filter(course => course.id !== id);
+
+        setCourse(coursesFiltered);
+    }
 
     return (
         <Container>
@@ -31,11 +41,12 @@ export function TableCourses() {
                         <th>#</th>
                         <th>Título</th>
                         <th>Categoria</th>
-                        <th>Data de Conclusão</th>
+                        <th>Conclusão</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {newCourse.map(course => (
+                    {course.map(course => (
                         <tr key={course.id}>
                             <td>{course.id}</td>
                             <td>{course.title}</td>
@@ -43,6 +54,11 @@ export function TableCourses() {
                                 {categories.map(c => c.id === course.category ? c.name : '')}
                             </td>
                             <td>{course.date}</td>
+                            <td>
+                                <button onClick={() => (handleDelete(course.id))}>
+                                    <FiTrash size={16} />
+                                </button>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

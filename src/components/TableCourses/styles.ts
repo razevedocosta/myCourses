@@ -13,17 +13,22 @@ export const Container = styled.div`
         th {
             color: var(--text-title);
             font-weight: bold;
-            padding: 1rem 2rem;
+            padding: 1rem;
             text-align: left;
             line-height: 1rem;
         }
 
         td {
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1rem;
             border: 0;
             background: var(--shape);
             color: var(--text-title);
             border-radius: 0.25rem;
+
+            button {
+                border: 0;
+                background: #fff;
+            }
         }
 
         tbody {

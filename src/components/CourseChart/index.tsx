@@ -48,7 +48,6 @@ export function CourseChart() {
         ))
     ];
     const data = plotagem[0];
-    console.log(data);
 
     return (
         <Container>

@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useMemo } from "react";
 import { createContext, useEffect, useState, ReactNode } from "react";
 
 interface CourseCategoryProps {
