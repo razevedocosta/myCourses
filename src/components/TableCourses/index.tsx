@@ -19,7 +19,7 @@ export function TableCourses() {
     const [course, setCourse] = useState<CourseParams[]>([]);
 
     useEffect(() => {
-        api.get('http://localhost:3333/courses')
+        api.get('/courses')
             .then((response) => {
                 setCourse(response.data);
             });
