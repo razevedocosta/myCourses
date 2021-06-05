@@ -24,9 +24,12 @@
 ### 💬 Funcionalidades
 - [x] cadastro de cursos
 - [x] listagem de todos os cursos feitos
+- [x] excluir curso da listagem
 - [x] filtro de cursos por categoria
+- [x] gráfico de pizza mostrando o percentual de cada categoria
+- [ ] gráfico de barras mostrando o total de horas por tipo
 - [ ] cadastro de categorias
-- [ ] gráfico de pizza mostrando o percentual de cada categoria
+- [ ] exibir mensagem de sucesso para cadastro/exclusão
   
 ### 🛠 Tecnologias
 
