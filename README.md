@@ -30,6 +30,7 @@
 - [ ] gráfico de barras mostrando o total de horas por tipo
 - [ ] cadastro de categorias
 - [ ] exibir mensagem de sucesso para cadastro/exclusão
+- [ ] modal para edição de cursos
   
 ### 🛠 Tecnologias
 
